@@ -1,0 +1,16 @@
+
+FROM python:3.12-slim
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir \
+    requests \
+    pandas \
+    sqlalchemy \
+    psycopg2-binary
+
+COPY fetch_weather.py .
+
+CMD ["python", "fetch_weather.py"]
+
+
